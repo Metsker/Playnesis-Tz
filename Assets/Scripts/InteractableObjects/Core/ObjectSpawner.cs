@@ -39,14 +39,7 @@ namespace InteractableObjects.Core
 
             for (int i = 0; i < pos.Count; i++)
             {
-                if (i == randomPos)
-                {
-                    i++;
-                    if (i == pos.Count)
-                    {
-                        return;
-                    }
-                }
+                if (i == randomPos) continue;
                 
                 var randomObj = Random.Range(0, obj.Count);
                 Instantiate(obj[randomObj], pos[i]);
@@ -60,16 +53,8 @@ namespace InteractableObjects.Core
             
             for (int i = 0; i < spawnPositions.positions.Length; i++)
             {
-                if (i == randomPos)
-                {
-                    i++;
-                    
-                    if (i == spawnPositions.positions.Length)
-                    {
-                        return;
-                    }
-                }
-
+                if (i == randomPos) continue;
+                
                 var randomObj = Random.Range(0, obj.Count);
                 Instantiate(obj[randomObj], spawnPositions.positions[i], obj[randomObj].transform.rotation);
             }
